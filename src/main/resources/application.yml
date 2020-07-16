@@ -1,0 +1,10 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: fx-blog
+  data:
+    mongodb:
+      host: localhost
+      database: fx_blog
+      port: 27017
