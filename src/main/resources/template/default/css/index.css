@@ -1,0 +1,56 @@
+.container {
+    height: 100%;
+}
+.fx-aside {
+    background-color: rgb(84, 92, 100);
+    position: fixed;
+    /*width: 180px;*/
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+.fx-main {
+    position: fixed;
+    left: 300px;
+}
+
+.describe {
+    text-align: center;
+    margin-top: 2rem;
+}
+.gitee{
+    background: url("../images/gitee.png");
+}
+
+.describe .github{
+    background: url("../images/gitee.png");
+}
+
+.describe .weibo{
+    background: url("../images/gitee.png");
+}
+
+
+/*   main   */
+.card-title {
+    font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+    font-size: 20px;
+    color: black;
+}
+
+.card-author {
+    font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+    font-size: 12px;
+    color: #999;
+    padding-top: 10px;
+}
+
+.card-body {
+    font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+    font-size: 16px;
+    padding-top: 5px;
+}
+
+.card-tags {
+    padding-top: 15px;
+}

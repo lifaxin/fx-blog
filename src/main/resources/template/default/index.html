@@ -3,26 +3,242 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
 <div id="app">
-    <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
-        <el-menu-item index="1">处理中心</el-menu-item>
-        <el-submenu index="2">
-            <template slot="title">我的工作台</template>
-            <el-menu-item index="2-1">选项1</el-menu-item>
-            <el-menu-item index="2-2">选项2</el-menu-item>
-            <el-menu-item index="2-3">选项3</el-menu-item>
-            <el-submenu index="2-4">
-                <template slot="title">选项4</template>
-                <el-menu-item index="2-4-1">选项1</el-menu-item>
-                <el-menu-item index="2-4-2">选项2</el-menu-item>
-                <el-menu-item index="2-4-3">选项3</el-menu-item>
-            </el-submenu>
-        </el-submenu>
-        <el-menu-item index="3" disabled>消息中心</el-menu-item>
-        <el-menu-item index="4"><a href="https://www.ele.me" target="_blank">订单管理</a></el-menu-item>
-    </el-menu>
+    <el-container class="container">
+        <el-aside class="fx-aside">
+            <div class="describe" style="text-align: center">
+                <div class="avatar-circle" >
+                    <div class="block"><el-avatar :size="120" :src="circleUrl"></el-avatar></div>
+                </div>
+                <el-divider></el-divider>
+                <div class="skill-process">
+                    <el-link  :underline="false"> <img src="images/gitee.png"> </el-link>
+                    <el-link  :underline="false"> <img src="images/github.png">  </el-link>
+                    <el-link  :underline="false"> <img src="images/weibo.png"> </el-link>
+                </div>
+            </div>
+            <el-menu default-active="1" background-color="#545c64" text-color="#fff" active-text-color="#ffd04b">
+                <el-menu-item index="1">
+                    <i class="el-icon-menu"></i>
+                    <span slot="title">最新文章</span>
+                </el-menu-item>
+                <el-menu-item index="2">
+                    <i class="el-icon-menu"></i>
+                    <span slot="title">文章存档</span>
+                </el-menu-item>
+                <el-menu-item index="3">
+                    <i class="el-icon-document"></i>
+                    <span slot="title">联系作者</span>
+                </el-menu-item>
+            </el-menu>
+            <el-footer>脚底板</el-footer>
+        </el-aside>
+        <el-main class="fx-main">
+            <el-row :gutter="20">
+                <el-col :span="8">
+                    <el-card class="card">
+                        <el-link  :underline="false" class="card-title">智能搜索模型预估框架Augur的建设与实践</el-link>
+                        <div class="card-author">
+                            <i class="el-icon-date"></i> <span>2020年7月17日 14:39:16</span>  <span><i class="el-icon-user"></i> <span>李法新</span></span>
+                        </div>
+                        <div class="card-body">
+                            本文将与大家探讨美团搜索与NLP部使用的统一在线预估框架Augur的设计思路、效果、优势与不足，希望对大家有所帮助或者启发 <el-link type="warning">阅读全文</el-link>
+                        </div>
+                        <div class="card-tags">
+                            <el-tag size="small">算法</el-tag>
+                            <el-tag size="small">AI平台</el-tag>
+                            <el-tag size="small">Augur</el-tag>
+                            <el-tag size="small">Poker</el-tag>
+                            <el-tag size="small">BERT</el-tag>
+                            <el-tag size="small">NLP</el-tag>
+                            <el-tag size="small">Transformer</el-tag>
+                            <el-tag size="small">AI</el-tag>
+                        </div>
+                    </el-card>
+                </el-col>
+                <el-col :span="8">
+                    <el-card class="card">
+                        <el-link :underline="false" class="card-title">智能搜索模型预估框架Augur的建设与实践</el-link>
+                        <div class="card-author">
+                            <i class="el-icon-date"></i> <span>2020年7月17日 14:39:16</span>  <span><i class="el-icon-user"></i> <span>李法新</span></span>
+                        </div>
+                        <div class="card-body">
+                            本文将与大家探讨美团搜索与NLP部使用的统一在线预估框架Augur的设计思路、效果、优势与不足，希望对大家有所帮助或者启发 <el-link type="warning">阅读全文</el-link>
+                        </div>
+                        <div class="card-tags">
+                            <el-tag size="small">算法</el-tag>
+                            <el-tag size="small">AI平台</el-tag>
+                            <el-tag size="small">Augur</el-tag>
+                            <el-tag size="small">Poker</el-tag>
+                            <el-tag size="small">BERT</el-tag>
+                            <el-tag size="small">NLP</el-tag>
+                            <el-tag size="small">Transformer</el-tag>
+                            <el-tag size="small">AI</el-tag>
+                        </div>
+                    </el-card>
+                </el-col>
+                <el-col :span="8">
+                    <el-card class="card">
+                        <el-link  :underline="false" class="card-title">智能搜索模型预估框架Augur的建设与实践</el-link>
+                        <div class="card-author">
+                            <i class="el-icon-date"></i> <span>2020年7月17日 14:39:16</span>  <span><i class="el-icon-user"></i> <span>李法新</span></span>
+                        </div>
+                        <div class="card-body">
+                            本文将与大家探讨美团搜索与NLP部使用的统一在线预估框架Augur的设计思路、效果、优势与不足，希望对大家有所帮助或者启发 <el-link type="warning">阅读全文</el-link>
+                        </div>
+                        <div class="card-tags">
+                            <el-tag size="small">算法</el-tag>
+                            <el-tag size="small">AI平台</el-tag>
+                            <el-tag size="small">Augur</el-tag>
+                            <el-tag size="small">Poker</el-tag>
+                            <el-tag size="small">BERT</el-tag>
+                            <el-tag size="small">NLP</el-tag>
+                            <el-tag size="small">Transformer</el-tag>
+                            <el-tag size="small">AI</el-tag>
+                        </div>
+                    </el-card>
+                </el-col>
+            </el-row>
+            <el-row :gutter="20">
+                <el-col :span="8">
+                    <el-card class="card">
+                        <el-link  :underline="false" class="card-title">智能搜索模型预估框架Augur的建设与实践</el-link>
+                        <div class="card-author">
+                            <i class="el-icon-date"></i> <span>2020年7月17日 14:39:16</span>  <span><i class="el-icon-user"></i> <span>李法新</span></span>
+                        </div>
+                        <div class="card-body">
+                            本文将与大家探讨美团搜索与NLP部使用的统一在线预估框架Augur的设计思路、效果、优势与不足，希望对大家有所帮助或者启发 <el-link type="warning">阅读全文</el-link>
+                        </div>
+                        <div class="card-tags">
+                            <el-tag size="small">算法</el-tag>
+                            <el-tag size="small">AI平台</el-tag>
+                            <el-tag size="small">Augur</el-tag>
+                            <el-tag size="small">Poker</el-tag>
+                            <el-tag size="small">BERT</el-tag>
+                            <el-tag size="small">NLP</el-tag>
+                            <el-tag size="small">Transformer</el-tag>
+                            <el-tag size="small">AI</el-tag>
+                        </div>
+                    </el-card>
+                </el-col>
+                <el-col :span="8">
+                    <el-card class="card">
+                        <el-link  :underline="false" class="card-title">智能搜索模型预估框架Augur的建设与实践</el-link>
+                        <div class="card-author">
+                            <i class="el-icon-date"></i> <span>2020年7月17日 14:39:16</span>  <span><i class="el-icon-user"></i> <span>李法新</span></span>
+                        </div>
+                        <div class="card-body">
+                            本文将与大家探讨美团搜索与NLP部使用的统一在线预估框架Augur的设计思路、效果、优势与不足，希望对大家有所帮助或者启发 <el-link type="warning">阅读全文</el-link>
+                        </div>
+                        <div class="card-tags">
+                            <el-tag size="small">算法</el-tag>
+                            <el-tag size="small">AI平台</el-tag>
+                            <el-tag size="small">Augur</el-tag>
+                            <el-tag size="small">Poker</el-tag>
+                            <el-tag size="small">BERT</el-tag>
+                            <el-tag size="small">NLP</el-tag>
+                            <el-tag size="small">Transformer</el-tag>
+                            <el-tag size="small">AI</el-tag>
+                        </div>
+                    </el-card>
+                </el-col>
+                <el-col :span="8">
+                    <el-card class="card">
+                        <el-link  :underline="false" class="card-title">智能搜索模型预估框架Augur的建设与实践</el-link>
+                        <div class="card-author">
+                            <i class="el-icon-date"></i> <span>2020年7月17日 14:39:16</span>  <span><i class="el-icon-user"></i> <span>李法新</span></span>
+                        </div>
+                        <div class="card-body">
+                            本文将与大家探讨美团搜索与NLP部使用的统一在线预估框架Augur的设计思路、效果、优势与不足，希望对大家有所帮助或者启发 <el-link type="warning">阅读全文</el-link>
+                        </div>
+                        <div class="card-tags">
+                            <el-tag size="small">算法</el-tag>
+                            <el-tag size="small">AI平台</el-tag>
+                            <el-tag size="small">Augur</el-tag>
+                            <el-tag size="small">Poker</el-tag>
+                            <el-tag size="small">BERT</el-tag>
+                            <el-tag size="small">NLP</el-tag>
+                            <el-tag size="small">Transformer</el-tag>
+                            <el-tag size="small">AI</el-tag>
+                        </div>
+                    </el-card>
+                </el-col>
+            </el-row>
+            <el-row :gutter="20">
+                <el-col :span="8">
+                    <el-card class="card">
+                        <el-link  :underline="false" class="card-title">智能搜索模型预估框架Augur的建设与实践</el-link>
+                        <div class="card-author">
+                            <i class="el-icon-date"></i> <span>2020年7月17日 14:39:16</span>  <span><i class="el-icon-user"></i> <span>李法新</span></span>
+                        </div>
+                        <div class="card-body">
+                            本文将与大家探讨美团搜索与NLP部使用的统一在线预估框架Augur的设计思路、效果、优势与不足，希望对大家有所帮助或者启发 <el-link type="warning">阅读全文</el-link>
+                        </div>
+                        <div class="card-tags">
+                            <el-tag size="small">算法</el-tag>
+                            <el-tag size="small">AI平台</el-tag>
+                            <el-tag size="small">Augur</el-tag>
+                            <el-tag size="small">Poker</el-tag>
+                            <el-tag size="small">BERT</el-tag>
+                            <el-tag size="small">NLP</el-tag>
+                            <el-tag size="small">Transformer</el-tag>
+                            <el-tag size="small">AI</el-tag>
+                        </div>
+                    </el-card>
+                </el-col>
+                <el-col :span="8">
+                    <el-card class="card">
+                        <el-link  :underline="false" class="card-title">智能搜索模型预估框架Augur的建设与实践</el-link>
+                        <div class="card-author">
+                            <i class="el-icon-date"></i> <span>2020年7月17日 14:39:16</span>  <span><i class="el-icon-user"></i> <span>李法新</span></span>
+                        </div>
+                        <div class="card-body">
+                            本文将与大家探讨美团搜索与NLP部使用的统一在线预估框架Augur的设计思路、效果、优势与不足，希望对大家有所帮助或者启发 <el-link type="warning">阅读全文</el-link>
+                        </div>
+                        <div class="card-tags">
+                            <el-tag size="small">算法</el-tag>
+                            <el-tag size="small">AI平台</el-tag>
+                            <el-tag size="small">Augur</el-tag>
+                            <el-tag size="small">Poker</el-tag>
+                            <el-tag size="small">BERT</el-tag>
+                            <el-tag size="small">NLP</el-tag>
+                            <el-tag size="small">Transformer</el-tag>
+                            <el-tag size="small">AI</el-tag>
+                        </div>
+                    </el-card>
+                </el-col>
+                <el-col :span="8">
+                    <el-card class="card">
+                        <el-link  :underline="false" class="card-title">智能搜索模型预估框架Augur的建设与实践</el-link>
+                        <div class="card-author">
+                            <i class="el-icon-date"></i> <span>2020年7月17日 14:39:16</span>  <span><i class="el-icon-user"></i> <span>李法新</span></span>
+                        </div>
+                        <div class="card-body">
+                            本文将与大家探讨美团搜索与NLP部使用的统一在线预估框架Augur的设计思路、效果、优势与不足，希望对大家有所帮助或者启发 <el-link type="warning">阅读全文</el-link>
+                        </div>
+                        <div class="card-tags">
+                            <el-tag size="small">算法</el-tag>
+                            <el-tag size="small">AI平台</el-tag>
+                            <el-tag size="small">Augur</el-tag>
+                            <el-tag size="small">Poker</el-tag>
+                            <el-tag size="small">BERT</el-tag>
+                            <el-tag size="small">NLP</el-tag>
+                            <el-tag size="small">Transformer</el-tag>
+                            <el-tag size="small">AI</el-tag>
+                        </div>
+                    </el-card>
+                </el-col>
+            </el-row>
+
+
+
+
+
+        </el-main>
+    </el-container>
 </div>
 </body>
 <!-- import Vue before Element -->
@@ -33,7 +249,10 @@
     new Vue({
         el: '#app',
         data: function() {
-            return { visible: false }
+            return {
+                circleUrl: "https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png",
+                squareUrl: "https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png"
+            }
         }
     })
 </script>
