@@ -29,5 +29,3 @@ build/
 
 ### VS Code ###
 .vscode/
-src/main/java/com/lifaxin/blog/controller/
-src/main/java/com/lifaxin/blog/domain/
