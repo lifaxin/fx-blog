@@ -15,12 +15,12 @@
                 </div>
                 <el-divider></el-divider>
                 <div class="skill-process">
-                    <el-link  :underline="false"> <img src="images/gitee.png"> </el-link>
-                    <el-link  :underline="false"> <img src="images/github.png">  </el-link>
-                    <el-link  :underline="false"> <img src="images/weibo.png"> </el-link>
+                    <el-link :underline="false"> <img src="images/gitee.png">  </el-link>
+                    <el-link :underline="false"> <img src="images/github.png"> </el-link>
+                    <el-link :underline="false"> <img src="images/weibo.png">  </el-link>
                 </div>
             </div>
-            <el-menu default-active="1" background-color="#545c64" text-color="#fff" active-text-color="#ffd04b">
+            <el-menu default-active="1" background-color="#000000" text-color="#fff" active-text-color="#ffd04b">
                 <el-menu-item index="1">
                     <i class="el-icon-menu"></i>
                     <span slot="title">最新文章</span>
@@ -34,7 +34,10 @@
                     <span slot="title">联系作者</span>
                 </el-menu-item>
             </el-menu>
-            <el-footer>脚底板</el-footer>
+            <el-footer class="fx-footer">
+                <el-link type="info" :underline="false"> ©2020 猿味儿 </el-link><br/>
+                <el-link type="info" target="_blank" href="http://www.beian.miit.gov.cn/">京ICP备20024464号-1</el-link>
+            </el-footer>
         </el-aside>
         <el-main class="fx-main">
             <el-row :gutter="20">
@@ -250,8 +253,7 @@
         el: '#app',
         data: function() {
             return {
-                circleUrl: "https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png",
-                squareUrl: "https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png"
+                circleUrl: "https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png"
             }
         }
     })
