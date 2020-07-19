@@ -25,7 +25,8 @@ target/
 /dist/
 /nbdist/
 /.nb-gradle/
-build/
-
+/node_modules
 ### VS Code ###
 .vscode/
+/src/main/resources/background/node_modules/
+/src/main/resources/background/node_modules
