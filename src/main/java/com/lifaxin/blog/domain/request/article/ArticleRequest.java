@@ -1,9 +1,6 @@
 package com.lifaxin.blog.domain.request.article;
 
-import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.util.List;
 
@@ -16,12 +13,18 @@ import java.util.List;
 @Data
 public class ArticleRequest {
 
-    @ApiModelProperty(value = "文章标题", required = true)
+    /**
+     * 文章标题
+     */
     private String articleTitle;
 
-    @ApiModelProperty(value = "文章作者", required = true)
+    /**
+     * 文章作者
+     */
     private List<String> articleAuthor;
 
-    @ApiModelProperty(value = "文章内容", required = true)
+    /**
+     * 文章内容
+     */
     private String articleContent;
 }

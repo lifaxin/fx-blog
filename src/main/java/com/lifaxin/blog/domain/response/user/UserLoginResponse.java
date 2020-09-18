@@ -1,6 +1,5 @@
 package com.lifaxin.blog.domain.response.user;
 
-import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 /**
@@ -11,6 +10,9 @@ import lombok.Data;
  **/
 @Data
 public class UserLoginResponse {
-    @ApiModelProperty("Token")
+
+    /**
+     * 登录后的token信息
+     */
     private String token;
 }

@@ -1,6 +1,5 @@
 package com.lifaxin.blog.domain.request.user;
 
-import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 /**
@@ -12,9 +11,13 @@ import lombok.Data;
 @Data
 public class UserLoginRequest {
 
-    @ApiModelProperty("用户名")
+    /**
+     * 用户名
+     */
     private String username;
 
-    @ApiModelProperty("密码")
+    /**
+     * 密码
+     */
     private String password;
 }
