@@ -69,8 +69,8 @@ public class UserServiceImpl implements UserService {
         // 获取用户状态
         boolean enabled = UserStatusEnum.AVAILABLE.equals(userEntity.getUserStatus());
         boolean accountNonExpired = true;
-        boolean credentialsNonExpired,
-        boolean accountNonLocked,
-        return new JwtUserDetails(username, userEntity.getPassWord(), enabled, );
+        boolean credentialsNonExpired = true;
+        boolean accountNonLocked = UserStatusEnum.AVAILABLE.equals(userEntity.getUserStatus());
+        return new JwtUserDetails(username, userEntity.getPassWord(), enabled, accountNonExpired, credentialsNonExpired, accountNonLocked, authorities);
     }
 }
