@@ -28,5 +28,5 @@ target/
 /node_modules
 ### VS Code ###
 .vscode/
-/src/main/resources/background/node_modules/
-/src/main/resources/background/node_modules
+/fx-blog-web/src/main/resources/background/node_modules/
+/fx-blog-web/src/main/resources/background/node_modules
