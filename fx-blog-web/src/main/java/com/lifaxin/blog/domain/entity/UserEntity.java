@@ -6,7 +6,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 /**
  * 用户相关数据库实体
@@ -43,7 +43,7 @@ public class UserEntity {
      * 密码设置时间
      */
     @Field
-    private Date passWordSetTime;
+    private LocalDateTime passWordSetTime;
 
     /**
      * 加密方式 salt:sha次数
@@ -67,12 +67,12 @@ public class UserEntity {
      * 创建时间
      */
     @Field
-    private Date createTime;
+    private LocalDateTime createTime;
 
 
     /**
      * 最后登录时间
      */
     @Field
-    private Date lastLoginTime;
+    private LocalDateTime lastLoginTime;
 }

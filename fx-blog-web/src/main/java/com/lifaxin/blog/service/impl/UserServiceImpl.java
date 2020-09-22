@@ -10,6 +10,7 @@ import com.lifaxin.blog.domain.response.user.UserLoginResponse;
 import com.lifaxin.blog.repository.UserRepository;
 import com.lifaxin.blog.security.JwtUserDetails;
 import com.lifaxin.blog.service.UserService;
+import com.lifaxin.blog.utils.DateTimeUtil;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -17,6 +18,8 @@ import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
 
 import javax.annotation.Resource;
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
@@ -60,6 +63,14 @@ public class UserServiceImpl implements UserService {
         return Mono.just(R.OK(userInfoResponse));
     }
 
+    /**
+     * 用户授权
+     *
+     * @param username
+     * @return org.springframework.security.core.userdetails.UserDetails
+     * @author LiFaXin
+     * @date 2020/9/22 11:55
+     */
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         // 根据账号获取
@@ -68,9 +79,11 @@ public class UserServiceImpl implements UserService {
         Set<GrantedAuthority> authorities = new HashSet<>();
         // 获取用户状态
         boolean enabled = UserStatusEnum.AVAILABLE.equals(userEntity.getUserStatus());
-        boolean accountNonExpired = true;
-        boolean credentialsNonExpired = true;
+        // 密码是否过期
+        boolean accountNonExpired = DateTimeUtil.compareDateTime(LocalDateTime.now(), DateTimeUtil.plusDateTime(userEntity.getPassWordSetTime(), 2, ChronoUnit.MONTHS));
+        // 账号是否可用
         boolean accountNonLocked = UserStatusEnum.AVAILABLE.equals(userEntity.getUserStatus());
-        return new JwtUserDetails(username, userEntity.getPassWord(), enabled, accountNonExpired, credentialsNonExpired, accountNonLocked, authorities);
+        // 执行授权操作
+        return new JwtUserDetails(username, userEntity.getPassWord(), enabled, accountNonExpired, true, accountNonLocked, authorities);
     }
 }
